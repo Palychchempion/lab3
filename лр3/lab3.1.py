@@ -1,11 +1,15 @@
-# Выполнение первого задания
-def stock(stocklist, product):
-    for i in range(len(stocklist)):
-        if product == stocklist[i]:
+# TODO Напишите функцию для поиска индекса товара
+def poisk(list, element):
+    for i in range(len(list)):
+        if list[i] == element:
             return i
-    return None
 
-list1 = ["Картошка", "Морковь", "Чебурек", "Ваз2107", "Чебурек"]
-print(stock(list1, "Чебурек"))
-print(stock(list1, "Картошка"))
-print(stock(list1, "Бентли"))
+
+items_list = ['яблоко', 'банан', 'апельсин', 'груша', 'киви', 'банан']
+
+for find_item in ['банан', 'груша', 'персик']:
+    index_item = poisk(items_list, find_item)  # TODO Вызовите функцию, что получить индекс товара
+    if index_item is not None:
+        print(f"Первое вхождение товара '{find_item}' имеет индекс {index_item}.")
+    else:
+        print(f"Товар '{find_item}' не найден в списке.")
